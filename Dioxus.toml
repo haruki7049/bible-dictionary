@@ -1,0 +1,8 @@
+[application]
+public_dir = "public"
+
+[web]
+pre_compress = false
+
+[web.app]
+title = "The bible dictionary"

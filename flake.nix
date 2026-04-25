@@ -41,15 +41,12 @@
           rust = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
           overlays = [ inputs.rust-overlay.overlays.default ];
 
-          buildInputs = [
-            pkgs.wayland
-            pkgs.libxkbcommon
-          ];
+          buildInputs = [ ];
           nativeBuildInputs = [
-            pkgs.pkg-config
-            pkgs.trunk
-            rust # Rust toolchain
             pkgs.nil # Nix LSP
+            rust # Rust toolchain
+            pkgs.dioxus-cli # Dioxus CLI
+            pkgs.binaryen # wasm_opt for Dioxus CLI
           ];
         in
         {
@@ -83,8 +80,6 @@
 
           devShells.default = pkgs.mkShell {
             inherit buildInputs nativeBuildInputs;
-
-            env.LD_LIBRARY_PATH = lib.makeLibraryPath buildInputs;
           };
         };
     };
