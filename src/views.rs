@@ -1,2 +1,2 @@
-mod dictionary;
-pub use dictionary::Dictionary;
+mod home;
+pub use home::Home;

@@ -2,7 +2,7 @@ mod components;
 mod views;
 
 use dioxus::prelude::*;
-use views::Dictionary;
+use views::Home;
 
 /// The Route enum is used to define the structure of internal routes in our app. All route enums need to derive
 /// the [`Routable`] trait, which provides the necessary methods for the router to work.
@@ -13,7 +13,7 @@ use views::Dictionary;
 #[rustfmt::skip]
 enum Route {
     #[route("/")]
-    Dictionary {},
+    Home {},
 }
 
 fn main() {
